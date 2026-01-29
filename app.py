@@ -15,14 +15,14 @@ def translate():
         text = data.get("text", "")
 
         if not text.strip():
-            return jsonify({"translation": ""})
+            return jsonify({"kannada_text": ""})
 
         translated = GoogleTranslator(
             source="en",
             target="kn"
         ).translate(text)
 
-        return jsonify({"translation": translated})
+        return jsonify({"kannada_text": translated})
 
     except Exception as e:
         print("TRANSLATION ERROR:", e)
